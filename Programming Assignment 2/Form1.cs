@@ -74,11 +74,10 @@ namespace Programming_Assignment_2
         {
             for (int i = 1; i < table.Count; i++)
             {
-                double dV = table[i].acceleration - table[i - 1].acceleration;
-                double dt = table[i].time - table[ i - 1].time;
-                table[i].altitude = dV / dt;
+                double dV = table[i].altitude - table[i - 1].altitude;
+                double dt = table[i].time - table[i - 1].time;
+                table[i].velocity = dV / dt;
             }
         }
-        
     }
 }

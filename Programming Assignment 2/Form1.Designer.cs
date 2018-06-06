@@ -36,11 +36,11 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.accelerationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.velocityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.altitudeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -89,10 +89,6 @@
             this.chartToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.chartToolStripMenuItem.Text = "Charts";
             // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
             // accelerationToolStripMenuItem
             // 
             this.accelerationToolStripMenuItem.Name = "accelerationToolStripMenuItem";
@@ -110,6 +106,11 @@
             this.altitudeToolStripMenuItem.Name = "altitudeToolStripMenuItem";
             this.altitudeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.altitudeToolStripMenuItem.Text = "Altitude ";
+           // this.altitudeToolStripMenuItem.Click += new System.EventHandler(this.altitudeToolStripMenuItem_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // Form1
             // 
