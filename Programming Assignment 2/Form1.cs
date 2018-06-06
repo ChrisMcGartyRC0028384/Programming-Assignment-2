@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Programming_Assignment_2
 {
@@ -68,5 +69,16 @@ namespace Programming_Assignment_2
                 }
             }
         }
+
+        void derivative()
+        {
+            for (int i = 1; i < table.Count; i++)
+            {
+                double dV = table[i].acceleration - table[i - 1].acceleration;
+                double dt = table[i].time - table[ i - 1].time;
+                table[i].altitude = dV / dt;
+            }
+        }
+        
     }
 }
