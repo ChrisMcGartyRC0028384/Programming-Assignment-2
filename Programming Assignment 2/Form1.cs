@@ -48,49 +48,10 @@ namespace Programming_Assignment_2
             {
                 double dv = table[i].velocity - table[i - 1].velocity;
                 double dt = table[i].time - table[i - 1].time;
-                table[i].velocity = dv / dt;
+                table[i].acceleration = dv / dt;
             }
         }
 
-
-
-        private void openToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            openFileDialog1.FileName = "";
-            openFileDialog1.Filter = "CSV Files|";
-            DialogResult result = openFileDialog1.ShowDialog();
-            if (result == DialogResult.OK)
-            {
-                try
-                {
-                    using (StreamReader sr = new StreamReader(openFileDialog1.FileName))
-                    {
-                        string line = sr.ReadLine();
-                        while (!sr.EndOfStream)
-                        {
-                            table.Add(new row());
-                            string[] r = sr.ReadLine().Split(',');
-                            table.Last().time = double.Parse(r[0]);
-                            table.Last().altitude = double.Parse(r[1]);
-                        }
-                    }
-                    calculateVelocity();
-                    calculateAcceleration();
-                }
-                catch (IOException)
-                {
-                    MessageBox.Show(openFileDialog1.FileName + " failed to open.");
-                }
-                catch (FormatException)
-                {
-                    MessageBox.Show(openFileDialog1.FileName + " is not in the required format.");
-                }
-                catch (IndexOutOfRangeException)
-                {
-                    MessageBox.Show(openFileDialog1.FileName + " is not in the required format");
-                }
-            }
-        }
 
         private void velocityToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -112,13 +73,14 @@ namespace Programming_Assignment_2
             }
             chart1.ChartAreas[0].AxisY.Title = "time (s)";
             chart1.ChartAreas[0].AxisY.Title = "velocity (m/s)";
+            //
             chart1.ChartAreas[0].RecalculateAxesScale();
         }
 
         private void saveCSVToolStripMenuItem_Click(object sender, EventArgs e)
         {
             saveFileDialog1.FileName = "";
-            saveFileDialog1.Filter = "csv Files|=.csv";
+            saveFileDialog1.Filter = "csv Files|*.csv";
             DialogResult results = saveFileDialog1.ShowDialog();
             if (results == DialogResult.OK)
             {
@@ -144,7 +106,7 @@ namespace Programming_Assignment_2
         {
 
             saveFileDialog1.FileName = "";
-            saveFileDialog1.Filter = "png Files|=.png";
+            saveFileDialog1.Filter = "png Files|*.png";
             DialogResult results = saveFileDialog1.ShowDialog();
             if (results == DialogResult.OK)
             {
@@ -177,7 +139,7 @@ namespace Programming_Assignment_2
             {
                 series.Points.AddXY(r.time, r.acceleration);
             }
-            chart1.ChartAreas[0].AxisY.Title = "time (s)";
+            chart1.ChartAreas[0].AxisX.Title = "time (s)";
             chart1.ChartAreas[0].AxisY.Title = "acceleration (m/s²)";
             chart1.ChartAreas[0].RecalculateAxesScale();
         }
@@ -200,9 +162,48 @@ namespace Programming_Assignment_2
             {
                 series.Points.AddXY(r.time, r.altitude);
             }
-            chart1.ChartAreas[0].AxisY.Title = "time (s)";
+            chart1.ChartAreas[0].AxisX.Title = "time (s)";
             chart1.ChartAreas[0].AxisY.Title = "altitude (m)";
             chart1.ChartAreas[0].RecalculateAxesScale();
+        }
+
+        
+        private void openToolStripMenuItem1_Click_1(object sender, EventArgs e)
+        {
+            openFileDialog1.FileName = "";
+            openFileDialog1.Filter = "CSV Files|*.csv";
+            DialogResult result = openFileDialog1.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                try
+                {
+                    using (StreamReader sr = new StreamReader(openFileDialog1.FileName))
+                    {
+                        string line = sr.ReadLine();
+                        while (!sr.EndOfStream)
+                        {
+                            table.Add(new row());
+                            string[] r = sr.ReadLine().Split(',');
+                            table.Last().time = double.Parse(r[0]);
+                            table.Last().altitude = double.Parse(r[1]);
+                        }
+                    }
+                    calculateVelocity();
+                    calculateAcceleration();
+                }
+                catch (IOException)
+                {
+                    MessageBox.Show(openFileDialog1.FileName + " failed to open.");
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show(openFileDialog1.FileName + " is not in the required format.");
+                }
+                catch (IndexOutOfRangeException)
+                {
+                    MessageBox.Show(openFileDialog1.FileName + " is not in the required format");
+                }
+            }
         }
     }
 }
