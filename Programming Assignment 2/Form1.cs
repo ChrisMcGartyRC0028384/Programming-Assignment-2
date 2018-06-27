@@ -73,7 +73,7 @@ namespace Programming_Assignment_2
             }
             chart1.ChartAreas[0].AxisY.Title = "time (s)";
             chart1.ChartAreas[0].AxisY.Title = "velocity (m/s)";
-            //
+            // shows chart
             chart1.ChartAreas[0].RecalculateAxesScale();
         }
 
