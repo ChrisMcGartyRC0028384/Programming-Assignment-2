@@ -34,6 +34,7 @@ namespace Programming_Assignment_2
 
         private void calculateVelocity()
         {
+            // calculated velocity using altitude and time
             for (int i = 1; i < table.Count; i++)
             {
                 double ds = table[i].altitude - table[i - 1].altitude;
@@ -44,6 +45,7 @@ namespace Programming_Assignment_2
 
         private void calculateAcceleration()
         {
+            // calulated acceleration using velocity and time
             for (int i = 1; i < table.Count; i++)
             {
                 double dv = table[i].velocity - table[i - 1].velocity;
