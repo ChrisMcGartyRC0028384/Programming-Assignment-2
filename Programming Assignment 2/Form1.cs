@@ -75,12 +75,13 @@ namespace Programming_Assignment_2
             }
             chart1.ChartAreas[0].AxisY.Title = "time (s)";
             chart1.ChartAreas[0].AxisY.Title = "velocity (m/s)";
-            // shows chart
+            // shows velocity chart
             chart1.ChartAreas[0].RecalculateAxesScale();
         }
 
         private void saveCSVToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            // enables the CSV file to be saved
             saveFileDialog1.FileName = "";
             saveFileDialog1.Filter = "csv Files|*.csv";
             DialogResult results = saveFileDialog1.ShowDialog();
@@ -106,7 +107,7 @@ namespace Programming_Assignment_2
 
         private void savePNGToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            // enables PNG file to be saved
             saveFileDialog1.FileName = "";
             saveFileDialog1.Filter = "png Files|*.png";
             DialogResult results = saveFileDialog1.ShowDialog();
@@ -125,6 +126,7 @@ namespace Programming_Assignment_2
 
         private void accelerationToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            // shows acceleration chart
             chart1.Series.Clear();
             chart1.ChartAreas[0].AxisX.IsMarginVisible = false;
             Series series = new Series
@@ -148,6 +150,7 @@ namespace Programming_Assignment_2
 
         private void altitudeToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            // shows altitude chart
             chart1.Series.Clear();
             chart1.ChartAreas[0].AxisX.IsMarginVisible = false;
             Series series = new Series
@@ -172,6 +175,7 @@ namespace Programming_Assignment_2
         
         private void openToolStripMenuItem1_Click_1(object sender, EventArgs e)
         {
+            // enables the code be to opened and loaded into the program
             openFileDialog1.FileName = "";
             openFileDialog1.Filter = "CSV Files|*.csv";
             DialogResult result = openFileDialog1.ShowDialog();
@@ -206,6 +210,11 @@ namespace Programming_Assignment_2
                     MessageBox.Show(openFileDialog1.FileName + " is not in the required format");
                 }
             }
+        }
+
+        private void chart1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

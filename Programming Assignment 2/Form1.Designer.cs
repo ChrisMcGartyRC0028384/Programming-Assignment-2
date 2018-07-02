@@ -64,6 +64,7 @@
             this.chart1.Size = new System.Drawing.Size(650, 449);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
+            this.chart1.Click += new System.EventHandler(this.chart1_Click);
             // 
             // menuStrip1
             // 
@@ -120,21 +121,21 @@
             // accelerationToolStripMenuItem
             // 
             this.accelerationToolStripMenuItem.Name = "accelerationToolStripMenuItem";
-            this.accelerationToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.accelerationToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.accelerationToolStripMenuItem.Text = "Acceleration";
             this.accelerationToolStripMenuItem.Click += new System.EventHandler(this.accelerationToolStripMenuItem_Click);
             // 
             // velocityToolStripMenuItem
             // 
             this.velocityToolStripMenuItem.Name = "velocityToolStripMenuItem";
-            this.velocityToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.velocityToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.velocityToolStripMenuItem.Text = "Velocity";
             this.velocityToolStripMenuItem.Click += new System.EventHandler(this.velocityToolStripMenuItem_Click);
             // 
             // altitudeToolStripMenuItem
             // 
             this.altitudeToolStripMenuItem.Name = "altitudeToolStripMenuItem";
-            this.altitudeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.altitudeToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.altitudeToolStripMenuItem.Text = "Altitude";
             this.altitudeToolStripMenuItem.Click += new System.EventHandler(this.altitudeToolStripMenuItem_Click);
             // 
